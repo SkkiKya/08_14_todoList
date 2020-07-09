@@ -18,7 +18,7 @@ $pdo = connect_db();
 <a href="../login/logout.php" class="">ログアウト</a>
 <fieldset>
   <legend>DB連携型todoリスト（入力画面）</legend>
-  <!-- <form action="todo_create.php" method="post" id="new_todo"> -->
+  <form method="post">
   <div>
      todo: <input type="text" name="todo" id="todo">
      deadline: <input type="date" name="deadline" id="date">

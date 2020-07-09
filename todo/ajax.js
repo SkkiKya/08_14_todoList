@@ -47,7 +47,7 @@ $(function() {
     params.append('date', date);
 axios.post('todo_create.php', params)
 .then(function(response){
-  console.log("response",response.config.data);
+  console.log(response.config.data);
   // var tr = $("<tr>");
   //           // 行にオブジェクトを生成します
   // var td_item = $('<td>').text(data[i].id);

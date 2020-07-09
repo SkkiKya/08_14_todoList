@@ -20,9 +20,9 @@ if(
 // 受け取ったデータを変数に入れる
 $todo = $_POST['todo'];
 $deadline = $_POST['deadline'];
-//  print_r($todo);
-//  print_r($deadline);
-//  exit();
+ print_r($todo);
+ print_r($deadline);
+ exit();
 // データ登録SQL作成
 
 // // // `created_at`と`updated_at`には実行時の`sysdate()`関数を用いて実行時の日時を入力する
