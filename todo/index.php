@@ -1,9 +1,7 @@
 <?php
-session_start();
-include('../login/funcs.php');
+require '../model/funcs.php';
 loginCheck();
-require_once('../db_Data/db.php');
-connect_db();
+$pdo = connect_db();
 ?>
 
 <!DOCTYPE html>
@@ -11,18 +9,30 @@ connect_db();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome!!</title>
+  <title>DB連携型todoリスト（入力画面）</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
 </head>
-<body>
-  <?php if(h($_SESSION["u_name"]) != ""):?>
-  <h1>ようこそ <?=h($_SESSION["u_name"])?>さんのtodoリストです。</h1>
-  <a href="todo_read.php">一覧画面</a>
-  <a href="todo_input.php">入力画面</a>
-  <a href="../login/logout.php" class="">ログアウト</a>
-  <?php else: ?>
-    <a href="../login/login.php"></a>
-  <?php endif ?>
 
+<body>
+<a href="../login/logout.php" class="">ログアウト</a>
+<fieldset>
+  <legend>DB連携型todoリスト（入力画面）</legend>
+  <!-- <form action="todo_create.php" method="post" id="new_todo"> -->
+  <div>
+     todo: <input type="text" name="todo" id="todo">
+     deadline: <input type="date" name="deadline" id="date">
+     <button id="submit">submit</button>
+    </div>
+    <!-- </form> -->
+    <table id="listbox">
+      <tr>
+       <th>id</th><th>deadline</th><th>todo</th>
+     </tr>
+    </table>
+    </fieldset>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="ajax.js"></script>
 </body>
 </html>

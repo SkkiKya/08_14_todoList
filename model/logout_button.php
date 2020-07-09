@@ -1,0 +1,1 @@
+<a href="../kanri_login/logout.php">ログアウト</a>
