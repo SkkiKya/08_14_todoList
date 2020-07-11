@@ -40,49 +40,48 @@ $(function() {
     console.log('Hello');
     const todo = $('#todo').val();
     const date = $('#date').val();
-    // console.log(todo);
-    // console.log(date);
-    var params = new URLSearchParams();
-    params.append('todo', todo);
-    params.append('date', date);
-axios.post('todo_create.php', params)
-.then(function(response){
-  console.log("response",response.config.data);
-  // var tr = $("<tr>");
-  //           // 行にオブジェクトを生成します
-  // var td_item = $('<td>').text(data[i].id);
-  // tr.append(td_item);
-  // var td_price = $('<td>').text(data[i].deadline);
-  // tr.append(td_price);
-  // var td_orders = $('<td>').text(data[i].todo);
-  // tr.append(td_orders);
-  // // 行のオブジェクトをテーブルに追加します
-  // $('#listbox').append(tr);
-})
-.catch(function(error){
-  console.log("error",error);
-})
-.finally(function(){
+//     // console.log(todo);
+//     // console.log(date);
+//     var params = new URLSearchParams();
+//     params.append('todo', todo);
+//     params.append('date', date);
+// axios.post('todo_create.php', params)
+// .then(function(response){
+//   console.log("response",response.config.data);
+//   // var tr = $("<tr>");
+//   //           // 行にオブジェクトを生成します
+//   // var td_item = $('<td>').text(data[i].id);
+//   // tr.append(td_item);
+//   // var td_price = $('<td>').text(data[i].deadline);
+//   // tr.append(td_price);
+//   // var td_orders = $('<td>').text(data[i].todo);
+//   // tr.append(td_orders);
+//   // // 行のオブジェクトをテーブルに追加します
+//   // $('#listbox').append(tr);
+// })
+// .catch(function(error){
+//   console.log("error",error);
+// })
+// .finally(function(){
 
-});
-//     $.ajax({
-//       url:"todo_create.php", //ここにデータを作るファイルのurl
-//       type:"POST",
-//       dataType: 'json',
-//       data: {
-//         // 入力内容を送る 
-//         "todo": todo,
-//         "date": date
-//       },
-//       })
-//       .done(function(data) {
-//         console.log(data);
-        
-//         })
-//         .fail(function(j,t,e){
-//           console.log('ajax通信ダメでした');
-//           console.log(e);
-//      });
+// });
+    $.ajax({
+      url:"todo_create.php", //ここにデータを作るファイルのurl
+      type:"POST",
+      // dataType: 'json',
+      data: {
+        // 入力内容を送る 
+        "todo": todo,
+        "date": date
+      },
+      })
+      .done(function(data, dataType) {
+        console.log("success",data);
+        })
+        .fail(function(j,t,e){
+          console.log('ajax通信ダメでした');
+          console.log(e);
+     });
 return false;
  });
 

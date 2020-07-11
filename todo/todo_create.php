@@ -7,12 +7,12 @@ $pdo = connect_db();
 // 項目入力のチェック
 // 値が存在しないor空で送信されてきた場合はNGにする
 // todoとdeadlineが完全に入力されていないと，エラーが出る
-if(
-  !isset($_POST['todo']) || $_POST['todo'] == '' 
-  || !isset($_POST['deadline']) || $_POST['deadline'] == '' 
-  ) {
-    exit('PramError');
-  }
+// if(
+//   !isset($_POST['todo']) || $_POST['todo'] == '' 
+//   || !isset($_POST['deadline']) || $_POST['deadline'] == '' 
+//   ) {
+//     exit('PramError');
+//   }
 
   // DB接続の設定
   // db.php

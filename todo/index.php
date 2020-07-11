@@ -18,13 +18,13 @@ $pdo = connect_db();
 <a href="../login/logout.php" class="">ログアウト</a>
 <fieldset>
   <legend>DB連携型todoリスト（入力画面）</legend>
-  <!-- <form action="todo_create.php" method="post" id="new_todo"> -->
   <div>
+    <form method="post">
      todo: <input type="text" name="todo" id="todo">
      deadline: <input type="date" name="deadline" id="date">
      <button id="submit">submit</button>
+    </form>
     </div>
-    <!-- </form> -->
     <table id="listbox">
       <tr>
        <th>id</th><th>deadline</th><th>todo</th>
